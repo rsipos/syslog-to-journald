@@ -1,0 +1,29 @@
+image: golang:latest
+
+before_script:
+  - go get -v
+
+stages:
+    - test
+    - build
+
+format:
+    stage: test
+    script:
+      - go fmt $(go list ./...)
+      - go vet $(go list ./...)
+      - go test -race $(go list ./...)
+
+compile:
+    stage: build
+    variables:
+      CGO_ENABLED: 0
+      GOOS: linux
+    script:
+      - go build -ldflags "-extldflags '-static'" -o $CI_PROJECT_DIR/$CI_PROJECT_NAME
+    only:
+      - master
+    artifacts:
+      paths:
+        - $CI_PROJECT_NAME
+      expire_in: 1 week
