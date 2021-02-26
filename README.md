@@ -17,7 +17,7 @@ Build and install
 
 Building and installing is very easy. Just run:
 
-> make & make install
+> make && make install
 
 This will place an executable at `/usr/local/bin/syslog-to-journald`.
 Additionally, a systemd unit file is installed to
