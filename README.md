@@ -62,3 +62,9 @@ Special thanks
 --------------
 
 [udp514-journal](https://git.eworm.de/cgit.cgi/udp514-journal/) project for almost everything.
+
+Source code
+-----------
+
+[gitlab](https://gitlab.com/rsipos/syslog-to-journald)
+[github mirror](https://github.com/rsipos/syslog-to-journald)
